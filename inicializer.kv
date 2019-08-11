@@ -1,0 +1,64 @@
+<Background>:
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+
+        Label:
+            text: "Ciclo de Estudos"
+            size_hint_y: None
+            height: 55
+        
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            
+            GridLayout:
+                id: box
+                size_hint_y: None
+                height: self.minimum_height
+                cols: 3
+        
+        BoxLayout:
+            size_hint_y: None
+            height: 80
+            GridLayout:
+                cols: 2
+                Label:
+                    text: 'Nome:'
+                TextInput:
+                    id: name
+                    multiline: False
+                Label: 
+                    text: 'Tempo:'
+                TextInput
+                    id: time
+                    multiline: False
+                    
+            Button:
+                text: 'Adicionar Item'
+                size_hint_y: None
+                size_hint_x: None
+                height: 80
+                width: 120
+                on_release: root.addTask()
+            
+<Tarefa>:
+    size_hint_y: None
+    height: 55
+    
+    Button:
+        width: 50
+        size_hint_x: None
+        text: "X"
+        size_hint_y: None
+        height: 55
+    Label:
+        id: name
+        text: "Termodinamica"
+        size_hint_y: None
+        height: 55
+    Label:
+        id: time
+        text: "50 minutos"
+        size_hint_y: None
+        height: 55
